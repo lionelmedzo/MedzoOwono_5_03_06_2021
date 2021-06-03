@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Les Petits Plats</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="scss/main.css">
+    <title>Les petits plats</title>
 </head>
 <body>
+    <header>
+        <div id ="logo">
+            <img src="./img/logo.png" alt="Logo des petits plats">
+        </div>
+        <h1 class ="titre"> Les petits plats</h1>
+    </header>
 
+    <main>
+        <section class = "recherche">
+            <input type="search" id="search" placeholder="Rechercher un ingredient, appareil, ustensiles ou recette" >
+        </section>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary1 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Ingrédient
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">test</a>
+              <a class="dropdown-item" href="https://www.youtube.com/watch?v=1LWEmAFp9xg">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+            <button class="btn btn-secondary2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Appareil
+            </button>
+            <button class="btn btn-secondary3 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Ustensiles
+            </button>
+        </div>
+    </main>
 </body>
 </html>
