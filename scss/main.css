@@ -52,7 +52,23 @@ header {
 }
 
 .dropdown-menu a {
-  color: white;
+  color: #fff;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu:hover {
+  display: block;
+}
+
+.dropdown-menu2 {
+  display: none;
+  background-color: #68D9A4;
+}
+
+.dropdown-menu2 a {
+  color: #fff;
   padding: 20px;
   text-decoration: none;
   display: block;

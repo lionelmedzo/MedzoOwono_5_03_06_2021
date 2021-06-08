@@ -52,7 +52,21 @@ header{
     background-color: $rectangle1-color;
     
     & a{
-        color: white;
+        color: $rectangle-text-color;
+        padding: 20px;
+        text-decoration: none;
+        display: block;
+    }
+    &:hover{
+        display: block;
+    }
+}
+.dropdown-menu2{
+    display: none;
+    background-color: $rectangle2-color;
+    
+    & a{
+        color: $rectangle-text-color;
         padding: 20px;
         text-decoration: none;
         display: block;
@@ -61,6 +75,7 @@ header{
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+
 
 .btn-secondary1{
     background-color:$rectangle1-color;
