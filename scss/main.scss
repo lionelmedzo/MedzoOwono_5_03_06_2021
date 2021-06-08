@@ -27,27 +27,37 @@ header{
     border-radius: $arrondi-radius;
 }
 
-.dropdown{
+.menu-deroulant{
     margin-left: 10%;
-    display: flex;
-    
+    display: flex;   
 }
+.dropdown{
+    margin-right: 5%;
+    &:hover .dropdown-menu{
+        display: block;
+    }
+   
+}
+.dropdown2{
+    margin-right: 5%;
+    &:hover .dropdown-menu2{
+        display: block;
+    }
+   
+}
+
 .btn{
     border-radius: $arrondi-radius;
     color: $rectangle-text-color;
     width: 15%;
     height:70px ;
-    margin-right: 2em;
-    
-    &:hover{
-        display: block;
-    }
-    
+    margin-right: 2em;    
 }
 
 
 
 .dropdown-menu{
+    
     display: none;
     background-color: $rectangle1-color;
     
@@ -72,16 +82,17 @@ header{
         display: block;
     }
 }
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
+
 
 
 .btn-secondary1{
     background-color:$rectangle1-color;
+    width: 100%;
+    
 }
 .btn-secondary2{
-    background-color: $rectangle2-color;     
+    background-color: $rectangle2-color;
+    width: 100%;     
 }
 .btn-secondary3{
     background-color:$rectangle3-color;   
