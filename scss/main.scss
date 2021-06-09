@@ -1,5 +1,12 @@
 @import './variables';
 
+@mixin flexContaineur($direction){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: $direction;
+}
+
 .titre{
     color:$bigTitle-color;
     text-align: center;
@@ -45,6 +52,13 @@ header{
     }
    
 }
+.dropdown3{
+    margin-right: 5%;
+    &:hover .dropdown-menu3{
+        display: block;
+    }
+   
+}
 
 .btn{
     border-radius: $arrondi-radius;
@@ -81,6 +95,24 @@ header{
         text-decoration: none;
         display: block;
     }
+    &:hover{
+        display: block;
+    }
+}
+
+.dropdown-menu3{
+    display: none;
+    background-color: $rectangle3-color;
+    
+    & a{
+        color: $rectangle-text-color;
+        padding: 20px;
+        text-decoration: none;
+        display: block;
+    }
+    &:hover{
+        display: block;
+    }
 }
 
 
@@ -95,6 +127,58 @@ header{
     width: 100%;     
 }
 .btn-secondary3{
-    background-color:$rectangle3-color;   
+    background-color:$rectangle3-color; 
+    width: 100%;   
 }
 
+.flex-recette{
+    @include flexContaineur(row);
+    margin-left: 10%;
+    margin-right:10% ;
+    
+    width: auto;
+    height: auto;
+
+}
+.recettes{
+    width :30%;
+    height :364px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color:$recette-back-color;
+    border-radius: $arrondi-radius;
+}
+.recettes-description{
+    background-color: $fondSearch-color;
+}
+.gray{
+    object-fit: cover;
+    max-width: 100%;
+    height: 55%;
+    border-radius: $radius-photo;
+}
+
+.recettes-descritpion{
+    @include flexContaineur(row);
+}
+h6{
+    text-align: center;
+}
+.description-ingredient{
+    margin-top: 1em;
+    width: 50%;
+    font-size: 10px;
+}
+.description-action{
+    margin-top: 1em;
+    width: 45%;
+    font-size: 11px;
+    
+}
+li{
+    list-style-type: none;
+    
+}
+.time{
+    text-align: right;
+}
