@@ -13,9 +13,9 @@ header {
   text-align: center;
 }
 
-.recherche {
-  margin-left: 10%;
-  margin-right: 10%;
+.navbar {
+  margin-left: 4%;
+  margin-right: 4%;
   margin-bottom: 5%;
 }
 
@@ -28,16 +28,13 @@ header {
 }
 
 .menu-deroulant {
-  margin-left: 10%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  margin-left: 4%;
   display: flex;
 }
 
 .dropdown {
   margin-right: 5%;
 }
-
 .dropdown:hover .dropdown-menu {
   display: block;
 }
@@ -45,7 +42,6 @@ header {
 .dropdown2 {
   margin-right: 5%;
 }
-
 .dropdown2:hover .dropdown-menu2 {
   display: block;
 }
@@ -53,7 +49,6 @@ header {
 .dropdown3 {
   margin-right: 5%;
 }
-
 .dropdown3:hover .dropdown-menu3 {
   display: block;
 }
@@ -70,14 +65,12 @@ header {
   display: none;
   background-color: #3282F7;
 }
-
 .dropdown-menu a {
   color: #fff;
   padding: 20px;
   text-decoration: none;
   display: block;
 }
-
 .dropdown-menu:hover {
   display: block;
 }
@@ -86,14 +79,12 @@ header {
   display: none;
   background-color: #68D9A4;
 }
-
 .dropdown-menu2 a {
   color: #fff;
   padding: 20px;
   text-decoration: none;
   display: block;
 }
-
 .dropdown-menu2:hover {
   display: block;
 }
@@ -102,14 +93,12 @@ header {
   display: none;
   background-color: #ED6454;
 }
-
 .dropdown-menu3 a {
   color: #fff;
   padding: 20px;
   text-decoration: none;
   display: block;
 }
-
 .dropdown-menu3:hover {
   display: block;
 }
@@ -129,26 +118,18 @@ header {
   width: 100%;
 }
 
-.flex-recette {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.d-flex {
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  margin-left: 10%;
-  margin-right: 10%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-left: 2%;
+  margin-right: 2%;
   width: auto;
   height: auto;
 }
 
-.recettes {
+.p-2 {
   width: 30%;
   height: 364px;
   margin-top: 2%;
@@ -162,26 +143,17 @@ header {
 }
 
 .gray {
-  -o-object-fit: cover;
-     object-fit: cover;
-  max-width: 100%;
+  object-fit: cover;
+  width: 100%;
   height: 55%;
   border-radius: 5px 5px 0 0;
 }
 
 .recettes-descritpion {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 h6 {
@@ -208,4 +180,5 @@ li {
   text-align: right;
   margin-left: 1em;
 }
+
 /*# sourceMappingURL=main.css.map */
