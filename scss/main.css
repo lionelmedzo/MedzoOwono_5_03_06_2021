@@ -29,12 +29,15 @@ header {
 
 .menu-deroulant {
   margin-left: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .dropdown {
   margin-right: 5%;
 }
+
 .dropdown:hover .dropdown-menu {
   display: block;
 }
@@ -42,6 +45,7 @@ header {
 .dropdown2 {
   margin-right: 5%;
 }
+
 .dropdown2:hover .dropdown-menu2 {
   display: block;
 }
@@ -49,6 +53,7 @@ header {
 .dropdown3 {
   margin-right: 5%;
 }
+
 .dropdown3:hover .dropdown-menu3 {
   display: block;
 }
@@ -65,12 +70,13 @@ header {
   display: none;
   background-color: #3282F7;
 }
+
 .dropdown-menu a {
   color: #fff;
-  padding: 20px;
   text-decoration: none;
   display: block;
 }
+
 .dropdown-menu:hover {
   display: block;
 }
@@ -79,12 +85,13 @@ header {
   display: none;
   background-color: #68D9A4;
 }
+
 .dropdown-menu2 a {
   color: #fff;
-  padding: 20px;
   text-decoration: none;
   display: block;
 }
+
 .dropdown-menu2:hover {
   display: block;
 }
@@ -93,12 +100,13 @@ header {
   display: none;
   background-color: #ED6454;
 }
+
 .dropdown-menu3 a {
   color: #fff;
-  padding: 20px;
   text-decoration: none;
   display: block;
 }
+
 .dropdown-menu3:hover {
   display: block;
 }
@@ -119,10 +127,18 @@ header {
 }
 
 .d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-left: 2%;
   margin-right: 2%;
   width: auto;
@@ -143,17 +159,26 @@ header {
 }
 
 .gray {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 55%;
   border-radius: 5px 5px 0 0;
 }
 
 .recettes-descritpion {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 h6 {
@@ -181,4 +206,16 @@ li {
   margin-left: 1em;
 }
 
+#test {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 /*# sourceMappingURL=main.css.map */

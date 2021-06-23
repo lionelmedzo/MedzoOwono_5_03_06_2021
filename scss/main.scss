@@ -75,9 +75,9 @@ header{
     display: none;
     background-color: $rectangle1-color;
     
+    
     & a{
         color: $rectangle-text-color;
-        padding: 20px;
         text-decoration: none;
         display: block;
     }
@@ -91,7 +91,6 @@ header{
     
     & a{
         color: $rectangle-text-color;
-        padding: 20px;
         text-decoration: none;
         display: block;
     }
@@ -106,7 +105,6 @@ header{
     
     & a{
         color: $rectangle-text-color;
-        padding: 20px;
         text-decoration: none;
         display: block;
     }
@@ -185,4 +183,10 @@ li{
 .time{
     text-align: right;
     margin-left: 1em;
+}
+
+#test{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
 }

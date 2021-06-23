@@ -63,7 +63,17 @@ function listeUstensil(X){
         }
     }
 }
- 
+
+//document.getElementById('search').value = tableauUstensil;
+const dropIngredient = document.getElementById("menu");
+const dropAppareil = document.getElementById("menu2");
+const dropustensil = document.getElementById("menu3");
+
+
+dropIngredient.innerHTML=tableauIngredient;
+dropAppareil.innerHTML=tableauAppareil;
+dropustensil.innerHTML=tableauUstensil;
+
 
 
 
