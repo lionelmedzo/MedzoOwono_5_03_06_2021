@@ -1,14 +1,18 @@
-let tableauIngredient=new Array;
+let tableauIngredient=[];
+let recupIngredient=[];
 listeIngredient(tableauIngredient);
 console.log("Liste d'ingredients : ");
 console.log(tableauIngredient);
 
 
 
+
+
 function listeIngredient(X){
     for (var i = 0; i < recipes.length ; i++)
     {
-        let recupIngredient = recipes[i].ingredients;
+       recupIngredient = recipes[i].ingredients;
+       
         for (var j = 0 ; j < recupIngredient.length; j++)
         {
             let ingredient = recupIngredient[j].ingredient;
@@ -17,12 +21,11 @@ function listeIngredient(X){
             {
                 X.push(ingredient);             // ajout valeur dans le tableau
             }    
-        }   
-          
+        }         
     }   
 
 }
-let tableauAppareil=new Array;
+let tableauAppareil=[];
 listeAppareil(tableauAppareil);
 console.log("Liste d'appareil : ");
 console.log(tableauAppareil);
@@ -44,7 +47,7 @@ function listeAppareil(X){
 
 
 
-let tableauUstensil=new Array;
+let tableauUstensil=[];
 listeUstensil(tableauUstensil);
 console.log("Liste d'ustensils : ");
 console.log(tableauUstensil);
