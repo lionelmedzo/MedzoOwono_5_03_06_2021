@@ -196,3 +196,19 @@ li{
     
 
 }*/
+.autocom-box{
+    li{
+        cursor: default;
+        border-radius: 3px;
+        display: none;
+        &:hover{
+            background-color: red;
+        }
+    }
+}
+.navbar{
+    .autocom-box{
+        opacity: 0;
+        pointer-events: none;
+    }
+}

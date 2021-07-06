@@ -29,7 +29,8 @@ function lectureInput(e) { // Fonction qui renvoie la valeur de l'input apres ap
             }
         }
         console.log(ingredientFind);
-        for(var i = 0 ; i<ingredientFind.length-1; i++)
+        alert(ingredientFind);
+        for(var i = 0 ; i<ingredientFind.length -1; i++)
         {
             if(tableauIngredient[ingredientFind[i]].toLowerCase()=== saisie.toLowerCase())
             {
@@ -38,6 +39,7 @@ function lectureInput(e) { // Fonction qui renvoie la valeur de l'input apres ap
             }
         }
         console.log(ingredientSearch);
+        alert(ingredientSearch);
           
             
             for(var i = 0 ;i<tableauAppareil.length; i++)
