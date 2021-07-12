@@ -1,5 +1,5 @@
 
-function lectureInput(e) { // Fonction qui renvoie la valeur de l'input apres appuyer sur Enter
+/*function lectureInput(e) { // Fonction qui renvoie la valeur de l'input apres appuyer sur Enter
     if (e.keyCode == 13) {
         var saisie = document.getElementById('search').value;
         alert("vous avez saisie : "+ saisie);
@@ -24,7 +24,7 @@ function lectureInput(e) { // Fonction qui renvoie la valeur de l'input apres ap
                         alert(save);
 
                     } */ 
-                }
+                /*}
                 
             }
         }
@@ -68,4 +68,4 @@ function lectureInput(e) { // Fonction qui renvoie la valeur de l'input apres ap
 }
 //let recupRecette=recipes[i].name;
 
- 
+ */
