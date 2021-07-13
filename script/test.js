@@ -1,6 +1,7 @@
 const search = document.querySelector(".navbar");
 const input = search.querySelector("input");
-//const suggBox = search.querySelector(".autocom-box"); // relier les blocs
+const autocom = document.getElementById("ingredient-list")
+
 
 // L'utilisateur appuie sur n'importe quel touche
 input.onkeyup=(e)=>{
@@ -19,36 +20,16 @@ input.onkeyup=(e)=>{
         
             
         });
-        emptyArray2=tableauIngredient.concat(tableauUstensil).concat(tableauAppareil).filter((data)=>{
-            
-            return data.toLowerCase().endsWith(userData.toLowerCase());
         
-            
-        });
         emptyArray= emptyArray.map((data)=>{
            return data= data;
         });
-        emptyArray2= emptyArray2.map((data)=>{
-            return data= data;
-        });
-        console.log(emptyArray.concat(emptyArray2));
-        //console.log(emptyArray2);
-    }
-    //else{
-        //show(emptyArray);
         
-    //}
+        console.log(emptyArray);
+        //console.log(emptyArray2); 
+    }
 }
 
-/*function show(list){
-    var listData;
-    if(!list.length)
-    {
-
-    }
-    else
-    {
-        listData =list.join('');
-    }
-    //suggBox.innerHTML= listData;
+/*function insererIngredient(){
+    
 }*/

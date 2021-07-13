@@ -206,16 +206,11 @@ li {
   margin-left: 1em;
 }
 
-/*#menu{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    flex-direction: column;
-    
+#menu {
+  color: white;
+  padding-right: 8px;
+}
 
-    
-
-}*/
 .autocom-box li {
   cursor: default;
   border-radius: 3px;
@@ -227,7 +222,6 @@ li {
 }
 
 .navbar .autocom-box {
-  opacity: 0;
   pointer-events: none;
 }
 /*# sourceMappingURL=main.css.map */

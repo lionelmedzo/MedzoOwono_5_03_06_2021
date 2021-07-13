@@ -186,16 +186,14 @@ li{
 }
 
 
-/*#menu{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    flex-direction: column;
+#menu{
+    color: white;
+    padding-right:8px
     
 
     
 
-}*/
+}
 .autocom-box{
     li{
         cursor: default;
@@ -208,7 +206,7 @@ li{
 }
 .navbar{
     .autocom-box{
-        opacity: 0;
+        
         pointer-events: none;
     }
 }
