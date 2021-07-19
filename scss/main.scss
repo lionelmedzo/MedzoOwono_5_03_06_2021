@@ -188,12 +188,16 @@ li{
 
 #menu{
     color: white;
-    padding-right:8px
-    
-
-    
+    margin: 0px;
+    padding: 10px;
+    width: 250%;
+    &:hover{
+        
+        display: grid;
+    }
 
 }
+
 .autocom-box{
     li{
         cursor: default;

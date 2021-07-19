@@ -16,7 +16,25 @@ input.onkeyup=(e)=>{
         //1er et mot saisi par l'utilisateur
         emptyArray=tableauIngredient.concat(tableauUstensil).concat(tableauAppareil).filter((data)=>{
             
-            return data.toLowerCase().startsWith(userData.toLowerCase());
+            //return data.toLowerCase().startsWith(userData.toLowerCase());
+            var dataTest= data.toLowercase();
+            if(dataTest.indexOf(" ")==-1)
+            {
+                return dataTest.includes(userData.toLowercase());
+            }
+            else
+            {
+                var dataArray = dataTest.split(" ");
+                for(var i =0; i<dataArray.length -1 ; i++)
+                {
+                    var dataMot = dataArray[i];
+                    if(dataMot.includes(userData.toLowercase()))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
         
             
         });
@@ -25,8 +43,11 @@ input.onkeyup=(e)=>{
            return data= data;
         });
         
-        console.log(emptyArray);
+        console.log(emptyArray)
         //console.log(emptyArray2); 
+        
+            
+        
     }
 }
 

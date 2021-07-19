@@ -208,7 +208,14 @@ li {
 
 #menu {
   color: white;
-  padding-right: 8px;
+  margin: 0px;
+  padding: 10px;
+  width: 250%;
+}
+
+#menu:hover {
+  display: -ms-grid;
+  display: grid;
 }
 
 .autocom-box li {
