@@ -88,6 +88,12 @@ function descriptionRecette(X){
         
     }
 }
+/*function  decoupage(){
+    for(var i= 0 ; i < recupDescription; i++){
+        let decoupDescription = recupDescription[i].split();
+        if 
+    }
+}*/
 
 
 
