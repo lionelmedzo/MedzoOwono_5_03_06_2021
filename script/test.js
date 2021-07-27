@@ -1,3 +1,30 @@
+
+// Fonction qui place les element dans la carte
+function displayAllItems(items)
+{
+  var itemsContainer = document.getElementById("itemsContainer");
+  for(let recipe of items)
+  {
+    itemsContainer.innerHTML += `
+    <div id="${recipe.id}" class="p-2 bd-highlight">
+      <img class="gray" src="./img/image_grise.jpg" alt="image grise">
+      <div class ="recettes-descritpion">
+          <div class ="description-ingredient">
+              <h6>${recipe.name}</h6>
+              <ul id="ingredient-list">
+                 ${recipe.ingredients.map(i => { return (`<li>${i.ingredient}: ${i.quantity}</li>`);})}
+              </ul>
+          </div>
+      
+          <div class="description-action">
+              <h6 class="time"><i class="far fa-clock"></i> ${recipe.time}min</h6>
+              <span>${recipe.description}
+              </span>
+          </div>
+      </div>`
+  }
+}
+//----------------------------------------------------------------------------------------
 const search = document.querySelector(".navbar");
 const input = search.querySelector("input");
 
@@ -14,24 +41,35 @@ input.onkeyup=(e)=>{
         {
             console.log( "ingredient :"+tableauIngredient[i]);
 
-            for(var j=0;j<tableauDescription.length; j++ )
+            /*for(var j=0;j<tableauDescription.length; j++ )
             {
-                var decoupe = tableauDescription[j].split(' ');
-                
-                console.log("tes1"+decoupe);
-                for(var k=0; k<decoupe.length; k++)
-                {
-                    decoupe.join();
-                    if (userData.toLowerCase() == decoupe[k])
-                    {
-                        decoupe.join();
-                        console.log(decoupe);
+                var decoupe=[];  
 
-                    }
-                }
+                decoupe = tableauDescription[j].split(" ");
+                
+               
+                
+                
+            }*/ 
+            /*if (userData.toLowerCase() != decoupe[0].toLowerCase()){
+                console.log("nop");
             }
+            else{
+                console.log("yep");
+            }
+            console.log(decoupe[0]);*/
             
-        }
+            
+        
+            
+            
+
+
+
+
+
+
+        }    
         if(userData.toLowerCase() == tableauAppareil[i])
         {
             console.log("Appareil :"+tableauAppareil[i]);
