@@ -18,8 +18,7 @@ function displayAllItems(items)
       
           <div class="description-action">
               <h6 class="time"><i class="far fa-clock"></i> ${recipe.time}min</h6>
-              <span>${recipe.description}
-              </span>
+              <span>${recipe.description}</span>
           </div>
       </div>`
   }
@@ -34,13 +33,13 @@ const input = search.querySelector("input");
 input.onkeyup=(e)=>{
     let userData = e.target.value; // reception de la valeur de l'utilisateur
     console.log(e.target.value);
-    var inserName;
     for(var i =0; i<tableauIngredient.length; i++)
     {
         if(userData.toLowerCase() == tableauIngredient[i])
         {
             console.log( "ingredient :"+tableauIngredient[i]);
 
+            console.log ();
             /*for(var j=0;j<tableauDescription.length; j++ )
             {
                 var decoupe=[];  
