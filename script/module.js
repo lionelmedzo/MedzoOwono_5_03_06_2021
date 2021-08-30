@@ -55,6 +55,40 @@ function getDistinctAppliances()
 
 
 // ----------------------------------------------------------------------------------------
+function openListIngredients(){
+  document.getElementById("ingredientsDropdownMenu").classList.toggle("show");
+}
+function openListAppareils(){
+  document.getElementById("appareilsDropdownMenu").classList.toggle("show");
+  console.log("test2");
+}
+function openListUstensils(){
+  document.getElementById("ustensilsDropdownMenu").classList.toggle("show");
+  console.log("test3");
+}
+/*const openIngredient = document.querySelectorAll(".dropdown-menu");
+openIngredient.forEach((btn) => btn.addEventListener("click",openList));
+
+function openList() {
+  
+  openIngredient.style.display = "block";
+  console.log("test");
+}*/
+
+function displayDistinctItemsDropdown (distinctIngredients = [], dropdownName) 
+{
+  var ingredientsDropdownMenu = document.getElementById(dropdownName);
+  
+  for(let ingredient of distinctIngredients)
+  {
+    const ingredientLink = document.createElement("a");
+    ingredientLink.id = ingredient;
+    ingredientLink.text = ingredient;
+    ingredientLink.href = "#";
+    ingredientsDropdownMenu.appendChild(ingredientLink);
+  }
+}
+
 
 
 function displayAllItems(items)
@@ -73,9 +107,12 @@ function displayAllItems(items)
               <h6>${recipe.name}</h6>
               <ul id="ingredient-list">
                  ${recipe.ingredients.map(i =>{
-                   if(i.quantity){
-                    return (`<li><b>${i.ingredient}</b>: ${i.quantity} ${i.unit??``} </li>`);}}).join('')
-                  /* correspond a un if else*/ }
+                    if(i.quantity){
+                      return (`<li><b>${i.ingredient}</b>: ${i.quantity} ${i.unit??``} </li>`);
+                    } else {
+                      return `<li>${i.ingredient}</li>`}}).join('')
+                  /* correspond a un if else*/ 
+                  }
                    
                  
               </ul>
@@ -126,13 +163,15 @@ for (i = 0; i < users.length; i += 1) {
   }
 }
 
+var reponseDropdwon = document.getElementById("reponse-dropdown");
+
 var distinctIngredients = getDistinctIngredients();
 var distinctUstensils = getDistinctUstensils();
 var distinctAppliance = getDistinctAppliances();
 
-//displayDistinctItemsDropdown(distinctIngredients, "ingredientsDropdownMenu");
-//(distinctUstensils, "appareilsDropdownMenu");
-//displayDistinctItemsDropdown(distinctAppliance, "ustensilsDropdownMenu");
+displayDistinctItemsDropdown(distinctIngredients, "ingredientsDropdownMenu");
+displayDistinctItemsDropdown(distinctUstensils, "appareilsDropdownMenu");
+displayDistinctItemsDropdown(distinctAppliance, "ustensilsDropdownMenu");
 displayAllItems(recipes)
 
 

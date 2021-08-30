@@ -40,23 +40,17 @@ header{
 }
 .dropdown{
     margin-right: 5%;
-    &:hover .dropdown-menu{
-        display: block;
-    }
+    
    
 }
 .dropdown2{
     margin-right: 5%;
-    &:hover .dropdown-menu2{
-        display: block;
-    }
+    
    
 }
 .dropdown3{
     margin-right: 5%;
-    &:hover .dropdown-menu3{
-        display: block;
-    }
+   
    
 }
 
@@ -81,9 +75,7 @@ header{
         text-decoration: none;
         display: block;
     }
-    &:hover{
-        display: block;
-    }
+    
 }
 .dropdown-menu2{
     display: none;
@@ -94,9 +86,7 @@ header{
         text-decoration: none;
         display: block;
     }
-    &:hover{
-        display: block;
-    }
+    
 }
 
 .dropdown-menu3{
@@ -108,9 +98,7 @@ header{
         text-decoration: none;
         display: block;
     }
-    &:hover{
-        display: block;
-    }
+    
 }
 
 

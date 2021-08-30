@@ -21,14 +21,13 @@
 
     <main>
         <nav class="navbar navbar-light bg-light">
-            <input type="search" id="search" placeholder="Rechercher un ingredient, appareil, ustensiles ou recette"  >
-            
-            
+            <input type="search" id="search" placeholder="Rechercher un ingredient, appareil, ustensiles ou recette"  >   
         </nav>
+        <div id ="reponse-dropdown"></div>
        
         <section class= "menu-deroulant">
             <div class="dropdown">
-                <button class="btn btn-secondary1 dropdown-toggle" type="button" data-toggle="dropdown">
+                <button class="btn btn-secondary1 dropdown-toggle" type="button" data-toggle="dropdown" onclick="openListIngredients()">
                 Ingrédients
                 </button>
                 <div id ="ingredientsDropdownMenu" class ="dropdown-menu">
@@ -36,16 +35,16 @@
                 </div> 
             </div>
             <div class="dropdown2">
-                <button class="btn btn-secondary2 dropdown-toggle" type="button" data-toggle="dropdown">
-                    Appareil
+                <button class="btn btn-secondary2 dropdown-toggle" type="button" data-toggle="dropdown" onclick="openListAppareils()">
+                    Appareils
                 </button>
                 <div id ="appareilsDropdownMenu" class="dropdown-menu2">
                 </div> 
             </div>
 
             <div class="dropdown3">
-                <button class="btn btn-secondary3 dropdown-toggle" type="button" data-toggle="dropdown">
-                    Ustensiles
+                <button class="btn btn-secondary3 dropdown-toggle" type="button" data-toggle="dropdown" onclick="openListUstensils()">
+                    Ustensils
                 </button>
                 <div id ="ustensilsDropdownMenu"  class="dropdown-menu3">
                 </div> 
