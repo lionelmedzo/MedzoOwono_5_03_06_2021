@@ -55,27 +55,16 @@ function getDistinctAppliances()
 
 
 // ----------------------------------------------------------------------------------------
-function displayDistinctItemsDropdown (distinctIngredients = [], dropdownName) 
-{
-  var ingredientsDropdownMenu = document.getElementById(dropdownName);
-  
-  for(let ingredient of distinctIngredients)
-  {
-    const ingredientLink = document.createElement("a");
-    ingredientLink.id = ingredient;
-    ingredientLink.text = ingredient;
-    ingredientLink.href = "#";
-    ingredientsDropdownMenu.appendChild(ingredientLink);
-  }
-}
+
 
 function displayAllItems(items)
 {
   var itemsContainer = document.getElementById("itemsContainer");
+  
 
   for(let recipe of items)
   {
-    
+   
     itemsContainer.innerHTML += `
     <div id="${recipe.id}" class="p-2 bd-highlight">
       <img class="gray" src="./img/image_grise.jpg" alt="image grise">
@@ -83,14 +72,18 @@ function displayAllItems(items)
           <div class ="description-ingredient">
               <h6>${recipe.name}</h6>
               <ul id="ingredient-list">
-                 ${recipe.ingredients.map(i => { return (`<li><b>${i.ingredient}</b>: ${i.quantity}${i.unit} </li>`);}).join('')}
+                 ${recipe.ingredients.map(i =>{
+                   if(i.quantity){
+                    return (`<li><b>${i.ingredient}</b>: ${i.quantity} ${i.unit??``} </li>`);}}).join('')
+                  /* correspond a un if else*/ }
+                   
+                 
               </ul>
           </div>
       
           <div class="description-action">
               <h6 class="time"><i class="far fa-clock"></i> ${recipe.time}min</h6>
-              <span>${recipe.description}
-              </span>
+              <span>${recipe.description}</span>
           </div>
       </div>`
   }
