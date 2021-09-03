@@ -64,27 +64,30 @@ header{
 
 
 
-.dropdown-menu{
+.dropdown-menu1{
     
-    display: none;
+    
     background-color: $rectangle1-color;
     
     
     & a{
+        
         color: $rectangle-text-color;
         text-decoration: none;
-        display: block;
-    }
+        
+      
+    }   
     
 }
 .dropdown-menu2{
     display: none;
     background-color: $rectangle2-color;
     
+    
     & a{
         color: $rectangle-text-color;
         text-decoration: none;
-        display: block;
+        
     }
     
 }
@@ -96,9 +99,13 @@ header{
     & a{
         color: $rectangle-text-color;
         text-decoration: none;
-        display: block;
+        
     }
     
+}
+.dropdown-menu.show {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 
@@ -207,8 +214,8 @@ li{
 ol, ul {
     padding-left: 0rem;
 }
-span{
+/*span{
     height: 10px;    
     overflow: hidden;
     text-overflow: ellipsis;
-}
+}*/

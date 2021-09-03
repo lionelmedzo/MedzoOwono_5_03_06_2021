@@ -54,15 +54,13 @@ header {
   margin-right: 2em;
 }
 
-.dropdown-menu {
-  display: none;
+.dropdown-menu1 {
   background-color: #3282F7;
 }
 
-.dropdown-menu a {
+.dropdown-menu1 a {
   color: #fff;
   text-decoration: none;
-  display: block;
 }
 
 .dropdown-menu2 {
@@ -73,7 +71,6 @@ header {
 .dropdown-menu2 a {
   color: #fff;
   text-decoration: none;
-  display: block;
 }
 
 .dropdown-menu3 {
@@ -84,7 +81,13 @@ header {
 .dropdown-menu3 a {
   color: #fff;
   text-decoration: none;
-  display: block;
+}
+
+.dropdown-menu.show {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
 }
 
 .btn-secondary1 {
@@ -210,9 +213,9 @@ ol, ul {
   padding-left: 0rem;
 }
 
-span {
-  height: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+/*span{
+    height: 10px;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+}*/
 /*# sourceMappingURL=main.css.map */

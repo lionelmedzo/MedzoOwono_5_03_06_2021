@@ -26,27 +26,27 @@
         <div id ="reponse-dropdown"></div>
        
         <section class= "menu-deroulant">
-            <div class="dropdown">
-                <button class="btn btn-secondary1 dropdown-toggle" type="button" data-toggle="dropdown" onclick="openListIngredients()">
+            <div class="dropdown-ingredients">
+                <button class="btn btn-secondary1 dropdown-toggle " type="button" id="dropdownIngredient" data-bs-toggle="dropdown" aria-expanded="false">
                 Ingrédients
                 </button>
-                <div id ="ingredientsDropdownMenu" class ="dropdown-menu">
+                <div id ="ingredientsDropdownMenu" class ="dropdown-menu dropdown-menu1" aria-labelledby="dropdownIngredient">
                    
                 </div> 
             </div>
-            <div class="dropdown2">
-                <button class="btn btn-secondary2 dropdown-toggle" type="button" data-toggle="dropdown" onclick="openListAppareils()">
+            <div class="dropdown-appareil">
+                <button class="btn btn-secondary2 dropdown-toggle " type="button" id="dropdownAppareil" data-bs-toggle="dropdown" aria-expanded="false">
                     Appareils
                 </button>
-                <div id ="appareilsDropdownMenu" class="dropdown-menu2">
+                <div id ="appareilsDropdownMenu" class="dropdown-menu dropdown-menu2" aria-labelledby="dropdownAppareil">
                 </div> 
             </div>
 
-            <div class="dropdown3">
-                <button class="btn btn-secondary3 dropdown-toggle" type="button" data-toggle="dropdown" onclick="openListUstensils()">
+            <div class="dropdown-ustensils">
+                <button class="btn btn-secondary3 dropdown-toggle " type="button" id="dropdownUstensil" data-bs-toggle="dropdown" aria-expanded="false">
                     Ustensils
                 </button>
-                <div id ="ustensilsDropdownMenu"  class="dropdown-menu3">
+                <div id ="ustensilsDropdownMenu"  class="dropdown-menu dropdown-menu3" aria-labelledby="dropdownUstensil">
                 </div> 
             </div>
         </section>

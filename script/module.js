@@ -8,9 +8,9 @@ function getDistinctIngredients ()
   {
     for(let ingredient of recipe.ingredients)
     {
-      if(!toReturn.includes(ingredient.ingredient))
+      if(!toReturn.includes(ingredient.ingredient.toLowerCase()))
       {
-        toReturn.push(ingredient.ingredient);
+        toReturn.push(ingredient.ingredient.toLowerCase());
       }
     }
   }
@@ -27,9 +27,9 @@ function getDistinctUstensils ()
   {
     for(let ustensil of recipe.ustensils)
     {
-      if(!toReturn.includes(ustensil))
+      if(!toReturn.includes(ustensil.toLowerCase()))
       {
-        toReturn.push(ustensil);
+        toReturn.push(ustensil.toLowerCase());
       }
     }
   }
@@ -44,9 +44,9 @@ function getDistinctAppliances()
 
   for(let recipe of recipes)
   {
-      if(!toReturn.includes(recipe.appliance))
+      if(!toReturn.includes(recipe.appliance.toLowerCase()))
       {
-        toReturn.push(recipe.appliance);
+        toReturn.push(recipe.appliance.toLowerCase());
       }
   }
 
@@ -55,25 +55,16 @@ function getDistinctAppliances()
 
 
 // ----------------------------------------------------------------------------------------
-function openListIngredients(){
+/*function openListIngredients(){
   document.getElementById("ingredientsDropdownMenu").classList.toggle("show");
 }
 function openListAppareils(){
   document.getElementById("appareilsDropdownMenu").classList.toggle("show");
-  console.log("test2");
 }
 function openListUstensils(){
   document.getElementById("ustensilsDropdownMenu").classList.toggle("show");
-  console.log("test3");
-}
-/*const openIngredient = document.querySelectorAll(".dropdown-menu");
-openIngredient.forEach((btn) => btn.addEventListener("click",openList));
-
-function openList() {
-  
-  openIngredient.style.display = "block";
-  console.log("test");
 }*/
+
 
 function displayDistinctItemsDropdown (distinctIngredients = [], dropdownName) 
 {
@@ -110,7 +101,7 @@ function displayAllItems(items)
                     if(i.quantity){
                       return (`<li><b>${i.ingredient}</b>: ${i.quantity} ${i.unit??``} </li>`);
                     } else {
-                      return `<li>${i.ingredient}</li>`}}).join('')
+                      return `<li><b>${i.ingredient}</b></li>`}}).join('')
                   /* correspond a un if else*/ 
                   }
                    
@@ -172,7 +163,7 @@ var distinctAppliance = getDistinctAppliances();
 displayDistinctItemsDropdown(distinctIngredients, "ingredientsDropdownMenu");
 displayDistinctItemsDropdown(distinctUstensils, "appareilsDropdownMenu");
 displayDistinctItemsDropdown(distinctAppliance, "ustensilsDropdownMenu");
-displayAllItems(recipes)
+displayAllItems(recipes);
 
 
 
