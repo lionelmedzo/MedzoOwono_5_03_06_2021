@@ -34,15 +34,15 @@ header {
   display: flex;
 }
 
-.dropdown {
+.dropdown-ingredients {
   margin-right: 5%;
 }
 
-.dropdown2 {
+.dropdown-appareil {
   margin-right: 5%;
 }
 
-.dropdown3 {
+.dropdown-ustensils {
   margin-right: 5%;
 }
 

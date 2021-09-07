@@ -64,6 +64,8 @@ function openListAppareils(){
 function openListUstensils(){
   document.getElementById("ustensilsDropdownMenu").classList.toggle("show");
 }*/
+ 
+
 
 
 function displayDistinctItemsDropdown (distinctIngredients = [], dropdownName) 
@@ -80,6 +82,24 @@ function displayDistinctItemsDropdown (distinctIngredients = [], dropdownName)
   }
 }
 
+const reponse = document.getElementById("reponse-dropdown");
+const a = document.querySelectorAll("a");
+
+function mouv(){
+// selectionne un element de la liste
+// le deplacer dans la div  reponse-dropdown 
+// et le supprimer de la liste
+
+
+//const liste = document.getElementsByTagName("a");
+
+reponse.innerHTML="Hello World";
+
+
+
+ 
+ 
+}
 
 
 function displayAllItems(items)
