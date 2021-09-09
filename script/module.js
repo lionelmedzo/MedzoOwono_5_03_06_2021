@@ -71,28 +71,38 @@ function openListUstensils(){
 function displayDistinctItemsDropdown (distinctIngredients = [], dropdownName) 
 {
   var ingredientsDropdownMenu = document.getElementById(dropdownName);
+  var ingredientContainer = document.createElement("ul");
+  console.log(distinctIngredients);
   
-  for(let ingredient of distinctIngredients)
+  for(var i=0; i< distinctIngredients.length; i++)
   {
-    const ingredientLink = document.createElement("a");
-    ingredientLink.id = ingredient;
+    var ingredient = distinctIngredients[i];
+    const ingredientLink = document.createElement("li");
+    ingredientLink.id = i;
     ingredientLink.text = ingredient;
-    ingredientLink.href = "#";
-    ingredientsDropdownMenu.appendChild(ingredientLink);
+    ingredientLink.addEventListener("click",mouv);
+    ingredientContainer.appendChild(ingredientLink);
+    
+
   }
+  ingredientsDropdownMenu.appendChild(ingredientContainer);
 }
 
 //const reponse = document.getElementById("reponse-dropdown");
 //const lait = document.getElementById("lait de coco");
 
-function mouv(){
+
+function mouv(e){
+  var ingredientItem = e.target;
+  console.log(ingredientItem);
+  var indexOfIngredient = ingredientItem.id;
+  var tagIngredient = document.createElement("div");
+  tagIngredient.className="ingredient_tag";
+  tagIngredient.text = distinctIngredients[indexOfIngredient];
+  document.getElementsByName("reponse-dropdown").appendChild(tagIngredient);
 // selectionne un element de la liste
 // le deplacer dans la div  reponse-dropdown 
 // et le supprimer de la liste
-
-//reponse.innerHTML="HEllo World";
-//reponse.innerHTML=$("#lait").appendTo("#reponse");
-document.getElementById("reponse-dropdown").appendChild(document.getElementById('lait de coco'));
 }
 
 function displayAllItems(items)
