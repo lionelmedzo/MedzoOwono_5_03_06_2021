@@ -72,7 +72,7 @@ function displayDistinctItemsDropdown (distinctIngredients = [], dropdownName)
 {
   var ingredientsDropdownMenu = document.getElementById(dropdownName);
   var ingredientContainer = document.createElement("ul");
-  console.log(distinctIngredients);
+  //console.log(distinctIngredients);
   
   for(var i=0; i< distinctIngredients.length; i++)
   {
