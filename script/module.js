@@ -80,7 +80,7 @@ function displayDistinctItemsDropdown (distinctIngredients = [], dropdownName)
     const ingredientLink = document.createElement("li");
     ingredientLink.id = i;
     ingredientLink.text = ingredient;
-    ingredientLink.addEventListener("click",mouv);
+    ingredientLink.addEventListener("click",mouvIngredient);
     ingredientContainer.appendChild(ingredientLink);
     
 
@@ -88,11 +88,12 @@ function displayDistinctItemsDropdown (distinctIngredients = [], dropdownName)
   ingredientsDropdownMenu.appendChild(ingredientContainer);
 }
 
+
 //const reponse = document.getElementById("reponse-dropdown");
 //const lait = document.getElementById("lait de coco");
 
 
-function mouv(e){
+function mouvIngredient(e){
   var ingredientItem = e.target;
   console.log(ingredientItem);
   var indexOfIngredient = ingredientItem.id;
@@ -104,7 +105,78 @@ function mouv(e){
 // le deplacer dans la div  reponse-dropdown 
 // et le supprimer de la liste
 }
+//------------------------------------------------------------------------------------
+function displayDistinctItemsDropdown2 (distinctUstensils = [], dropdownName) 
+{
+  var ustensilsDropdownMenu = document.getElementById(dropdownName);
+  var ustensilsContainer = document.createElement("ul");
+  //console.log(distinctIngredients);
+  
+  for(var i=0; i< distinctUstensils.length; i++)
+  {
+    var ustensils = distinctUstensils[i];
+    const ustensilsLink = document.createElement("li");
+    ustensilsLink.id = i;
+    ustensilsLink.text = ustensils;
+    ustensilsLink.addEventListener("click",mouvUstensils);
+    ustensilsContainer.appendChild(ustensilsLink);
+    
 
+  }
+  ustensilsDropdownMenu.appendChild(ustensilsContainer);
+}
+
+
+
+
+
+function mouvUstensils(e){
+  var ustensilsItem = e.target;
+  console.log(ustensilsItem);
+  var indexOfUstensils = ustensilsItem.id;
+  var tagUstensils = document.createElement("div");
+  tagUstensils.className="Ustensils_tag";
+  tagUstensils.text = distinctUstensils[indexOfUstensils];
+  document.getElementsByName("reponse-dropdown").appendChild(tagUstensils);
+
+}
+//------------------------------------------------------------------------------------
+function displayDistinctItemsDropdown3 (distinctAppliance = [], dropdownName) 
+{
+  var appliancesDropdownMenu = document.getElementById(dropdownName);
+  var applianceContainer = document.createElement("ul");
+  //console.log(distinctIngredients);
+  
+  for(var i=0; i< distinctAppliance.length; i++)
+  {
+    var appliances = distinctAppliance[i];
+    const appliancesLink = document.createElement("li");
+    appliancesLink.id = i;
+    appliancesLink.text = appliances;
+    appliancesLink.addEventListener("click",mouvAppliances);
+    applianceContainer.appendChild(appliancesLink);
+    
+
+  }
+  appliancesDropdownMenu.appendChild(applianceContainer);
+}
+
+
+
+
+
+function mouvAppliances(e){
+  var appliancesItem = e.target;
+  console.log(appliancesItem);
+  var indexOfappliances = appliancesItem.id;
+  var tagAppliances = document.createElement("div");
+  tagAppliances.className="Appliances_tag";
+  tagAppliances.text = distinctAppliance[indexOfappliances];
+  document.getElementsByName("reponse-dropdown").appendChild(tagAppliances);
+
+}
+
+//------------------------------------------------------------------------------------
 function displayAllItems(items)
 {
   var itemsContainer = document.getElementById("itemsContainer");
@@ -184,8 +256,8 @@ var distinctUstensils = getDistinctUstensils();
 var distinctAppliance = getDistinctAppliances();
 
 displayDistinctItemsDropdown(distinctIngredients, "ingredientsDropdownMenu");
-displayDistinctItemsDropdown(distinctUstensils, "appareilsDropdownMenu");
-displayDistinctItemsDropdown(distinctAppliance, "ustensilsDropdownMenu");
+displayDistinctItemsDropdown2(distinctUstensils, "ustensilsDropdownMenu");
+displayDistinctItemsDropdown3(distinctAppliance, "appareilsDropdownMenu");
 displayAllItems(recipes);
 
 
