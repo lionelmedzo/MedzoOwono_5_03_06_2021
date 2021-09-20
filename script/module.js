@@ -1,9 +1,7 @@
 // Creation de 3 tableau de string
 function getDistinctIngredients ()  
 {
-
   let toReturn = [];
-
   for(let recipe of recipes)
   {
     for(let ingredient of recipe.ingredients)
@@ -14,15 +12,11 @@ function getDistinctIngredients ()
       }
     }
   }
-
   return toReturn;
 }
-
 function getDistinctUstensils ()  
 {
-
   let toReturn = [];
-
   for(let recipe of recipes)
   {
     for(let ustensil of recipe.ustensils)
@@ -33,15 +27,11 @@ function getDistinctUstensils ()
       }
     }
   }
-
   return toReturn;
 }
-
-
 function getDistinctAppliances()
 {
   let toReturn = [];
-
   for(let recipe of recipes)
   {
       if(!toReturn.includes(recipe.appliance.toLowerCase()))
@@ -49,85 +39,79 @@ function getDistinctAppliances()
         toReturn.push(recipe.appliance.toLowerCase());
       }
   }
-
   return toReturn;
 }
 
 
 // ----------------------------------------------------------------------------------------
-/*function openListIngredients(){
-  document.getElementById("ingredientsDropdownMenu").classList.toggle("show");
-}
-function openListAppareils(){
-  document.getElementById("appareilsDropdownMenu").classList.toggle("show");
-}
-function openListUstensils(){
-  document.getElementById("ustensilsDropdownMenu").classList.toggle("show");
-}*/
- 
-
-
-
 function displayDistinctItemsDropdown (distinctIngredients = [], dropdownName) 
 {
   var ingredientsDropdownMenu = document.getElementById(dropdownName);
   var ingredientContainer = document.createElement("ul");
-  //console.log(distinctIngredients);
-  
   for(var i=0; i< distinctIngredients.length; i++)
   {
     var ingredient = distinctIngredients[i];
     const ingredientLink = document.createElement("li");
-    ingredientLink.id = i;
-    ingredientLink.text = ingredient;
+    // enlever id
+    ingredientLink.id = ingredient;
+    ingredientLink.innerText = ingredient;
     ingredientLink.addEventListener("click",mouvIngredient);
-    ingredientContainer.appendChild(ingredientLink);
-    
-
+    ingredientsDropdownMenu.appendChild(ingredientLink);
   }
   ingredientsDropdownMenu.appendChild(ingredientContainer);
 }
 
 
-//const reponse = document.getElementById("reponse-dropdown");
-//const lait = document.getElementById("lait de coco");
-
-
-function mouvIngredient(e){
-  var ingredientItem = e.target;
-  console.log(ingredientItem);
-  var indexOfIngredient = ingredientItem.id;
-  var tagIngredient = document.createElement("div");
-  tagIngredient.className="ingredient_tag";
-  tagIngredient.text = distinctIngredients[indexOfIngredient];
-  document.getElementsByName("reponse-dropdown").appendChild(tagIngredient);
-// selectionne un element de la liste
-// le deplacer dans la div  reponse-dropdown 
-// et le supprimer de la liste
-}
-//------------------------------------------------------------------------------------
-function displayDistinctItemsDropdown2 (distinctUstensils = [], dropdownName) 
+function displayDistinctItemsDropdown2 (distinctUstensils = [], dropdownName2) 
 {
-  var ustensilsDropdownMenu = document.getElementById(dropdownName);
+  var ustensilsDropdownMenu = document.getElementById(dropdownName2);
   var ustensilsContainer = document.createElement("ul");
-  //console.log(distinctIngredients);
-  
   for(var i=0; i< distinctUstensils.length; i++)
   {
     var ustensils = distinctUstensils[i];
     const ustensilsLink = document.createElement("li");
-    ustensilsLink.id = i;
-    ustensilsLink.text = ustensils;
+    // enlever id
+    //ustensilsLink.id = i;
+    ustensilsLink.innerText = ustensils;
     ustensilsLink.addEventListener("click",mouvUstensils);
-    ustensilsContainer.appendChild(ustensilsLink);
-    
-
+    ustensilsDropdownMenu.appendChild(ustensilsLink);
   }
   ustensilsDropdownMenu.appendChild(ustensilsContainer);
 }
 
 
+function displayDistinctItemsDropdown3 (distinctAppliance = [], dropdownName3) 
+{
+  var appliancesDropdownMenu = document.getElementById(dropdownName3);
+  var appliancesContainer = document.createElement("ul");
 
+  for(var i=0; i< distinctAppliance.length; i++)
+  {
+    var appliances = distinctAppliance[i];
+    const appliancesLink = document.createElement("li");
+    // enlever id
+    //applianceLink.id = i;
+    appliancesLink.innerText = appliances;
+    appliancesDropdownMenu.appendChild(appliancesLink);
+  }
+  appliancesDropdownMenu.appendChild(appliancesContainer);
+}
+
+function mouvIngredient(event){
+  var ingredientItem = event.target;
+  console.log(ingredientItem);
+  var indexOfIngredient = ingredientItem.id;
+  var tagIngredient = document.createElement("div");
+  tagIngredient.className="ingredient_tag";
+  tagIngredient.innerText = distinctIngredients[indexOfIngredient];
+  //tagIngredient.appendChild(ingredientItem);
+
+
+  document.getElementsByName("reponse-dropdown").appendChild(tagIngredient);
+// selectionne un element de la liste
+// le deplacer dans la div  reponse-dropdown 
+// et le supprimer de la liste
+}
 
 
 function mouvUstensils(e){
@@ -137,32 +121,9 @@ function mouvUstensils(e){
   var tagUstensils = document.createElement("div");
   tagUstensils.className="Ustensils_tag";
   tagUstensils.text = distinctUstensils[indexOfUstensils];
-  document.getElementsByName("reponse-dropdown").appendChild(tagUstensils);
+  document.getElementsById("reponse-dropdown").appendChild(tagUstensils);
 
 }
-//------------------------------------------------------------------------------------
-function displayDistinctItemsDropdown3 (distinctAppliance = [], dropdownName) 
-{
-  var appliancesDropdownMenu = document.getElementById(dropdownName);
-  var applianceContainer = document.createElement("ul");
-  //console.log(distinctIngredients);
-  
-  for(var i=0; i< distinctAppliance.length; i++)
-  {
-    var appliances = distinctAppliance[i];
-    const appliancesLink = document.createElement("li");
-    appliancesLink.id = i;
-    appliancesLink.text = appliances;
-    appliancesLink.addEventListener("click",mouvAppliances);
-    applianceContainer.appendChild(appliancesLink);
-    
-
-  }
-  appliancesDropdownMenu.appendChild(applianceContainer);
-}
-
-
-
 
 
 function mouvAppliances(e){
@@ -172,19 +133,20 @@ function mouvAppliances(e){
   var tagAppliances = document.createElement("div");
   tagAppliances.className="Appliances_tag";
   tagAppliances.text = distinctAppliance[indexOfappliances];
-  document.getElementsByName("reponse-dropdown").appendChild(tagAppliances);
+  document.getElementsById("reponse-dropdown").appendChild(tagAppliances);
 
 }
 
-//------------------------------------------------------------------------------------
+
 function displayAllItems(items)
 {
   var itemsContainer = document.getElementById("itemsContainer");
-  
+
 
   for(let recipe of items)
   {
-   
+    
+
     itemsContainer.innerHTML += `
     <div id="${recipe.id}" class="p-2 bd-highlight">
       <img class="gray" src="./img/image_grise.jpg" alt="image grise">
@@ -193,12 +155,12 @@ function displayAllItems(items)
               <h6>${recipe.name}</h6>
               <ul id="ingredient-list">
                  ${recipe.ingredients.map(i =>{
-                    if(i.quantity){
-                      return (`<li><b>${i.ingredient}</b>: ${i.quantity} ${i.unit??``} </li>`);
+                   if(i.quantity){
+                    return (`<li><b>${i.ingredient}</b>: ${i.quantity} ${i.unit??``} </li>`);
                     } else {
                       return `<li><b>${i.ingredient}</b></li>`}}).join('')
                   /* correspond a un if else*/ 
-                  }
+                    }
                    
                  
               </ul>
@@ -206,6 +168,8 @@ function displayAllItems(items)
       
           <div class="description-action">
               <h6 class="time"><i class="far fa-clock"></i> ${recipe.time}min</h6>
+              <span>${recipe.description}
+              </span>
               <span>${recipe.description}</span>
           </div>
       </div>`
@@ -213,7 +177,6 @@ function displayAllItems(items)
 }
 const search = document.querySelector(".navbar");
 const input = search.querySelector("input");
-
 input.onkeyup=(e)=>{
   let userData = e.target.value; 
  if(userData.length > 2)
@@ -230,8 +193,8 @@ for (i = 0; i < users.length; i += 1) {
   if (this.isUserExist(users[i]) {
     filteredFriends.push(users[i]);
   }
-}*/
-/* let filteredFriends = users.filter(user => {
+}
+let filteredFriends = users.filter(user => {
     return this.isUserExist(user);
 });*/
 
@@ -249,7 +212,7 @@ for (i = 0; i < users.length; i += 1) {
   }
 }
 
-var reponseDropdwon = document.getElementById("reponse-dropdown");
+
 
 var distinctIngredients = getDistinctIngredients();
 var distinctUstensils = getDistinctUstensils();
@@ -259,122 +222,3 @@ displayDistinctItemsDropdown(distinctIngredients, "ingredientsDropdownMenu");
 displayDistinctItemsDropdown2(distinctUstensils, "ustensilsDropdownMenu");
 displayDistinctItemsDropdown3(distinctAppliance, "appareilsDropdownMenu");
 displayAllItems(recipes);
-
-
-
-/*let tableauIngredient=[];
-let recupIngredient=[];
-listeIngredient(tableauIngredient);
-console.log("Liste d'ingredients : ");
-console.log(tableauIngredient);
-
-
-
-
-
-function listeIngredient(X){
-    for (var i = 0; i < recipes.length ; i++)
-    {
-       recupIngredient = recipes[i].ingredients;
-       
-        for (var j = 0 ; j < recupIngredient.length; j++)
-        {
-            let ingredient = recupIngredient[j].ingredient.toLowerCase();
-            //console.log(ingredient); // chaine de caractere, exemple  "l" "a" "i" "t"
-            if (X.includes(ingredient)== false) // condition si la valeur n'est pas dans le tableau 
-            {
-                X.push(ingredient);             // ajout valeur dans le tableau
-            }    
-        }         
-    }   
-
-}
-let tableauAppareil=[];
-listeAppareil(tableauAppareil);
-console.log("Liste d'appareil : ");
-console.log(tableauAppareil);
-
-function listeAppareil(X){
-    for (var i = 0; i < recipes.length ; i++)
-    {
-        let recupAppareil= recipes[i].appliance.toLowerCase();
-	    for  (var j = 0; j < recupAppareil.length ; j++)
-	    {
-            
-            if (X.includes(recupAppareil)==false)
-            {
-            X.push(recupAppareil);
-            }
-        }
-        
-    }
-}
-
-
-
-let tableauUstensil=[];
-listeUstensil(tableauUstensil);
-console.log("Liste d'ustensils : ");
-console.log(tableauUstensil);
-
-function listeUstensil(X){
-    for (var i = 0; i < recipes.length ; i++)
-    {
-        let recupUstensil= recipes[i].ustensils;
-        for  (var j = 0; j < recupUstensil.length ; j++)
-        {
-            let ustensil =  recupUstensil[j].toLowerCase();
-            if (X.includes(ustensil)==false)
-            {
-                X.push(ustensil);
-            }
-        }
-        
-    }
-}
-
-let tableauDescription=[];
-
-descriptionRecette(tableauDescription);
-console.log("description : ");
-console.log(tableauDescription);
-
-function descriptionRecette(X){
-    for (var i = 0; i < recipes.length ; i++)
-    {
-        let recupDescription=recipes[i].description;
-        for  (var j = 0; j < recupDescription.length ; j++)
-	    {
-            if(X.includes(recupDescription)==false){
-                X.push(recupDescription);
-            }
-        }
-        
-    }
-}
-/*function  decoupage(){
-    for(var i= 0 ; i < recupDescription; i++){
-        let decoupDescription = recupDescription[i].split();
-        if 
-    }
-}*/
-
-
-
-//document.getElementById('search').value = tableauUstensil;
-/*const dropIngredient = document.getElementById("menu");
-const dropAppareil = document.getElementById("menu2");
-const dropustensil = document.getElementById("menu3");
-
-
-dropIngredient.innerHTML=tableauIngredient;
-dropAppareil.innerHTML=tableauAppareil;
-dropustensil.innerHTML=tableauUstensil;*/
-
-
-
-
-
-    
-    
-

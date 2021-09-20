@@ -222,8 +222,13 @@ ol, ul {
 
 #ingredientsDropdownMenu{
     ul{
-        width: 100%;
-        max-height: 100%;
+        width: 100% !important;
+/* changer le with 30 % et pad 20px pour a case*/
+  height: 100% !important;
+  display: grid;
+  grid-template-columns:repeat(2,150px);
+  grid-template-rows: auto;
+  align-items: center;
         
     }
 }
