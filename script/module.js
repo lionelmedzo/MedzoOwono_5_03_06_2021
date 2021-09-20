@@ -71,7 +71,7 @@ function displayDistinctItemsDropdown2 (distinctUstensils = [], dropdownName2)
     var ustensils = distinctUstensils[i];
     const ustensilsLink = document.createElement("li");
     // enlever id
-    //ustensilsLink.id = i;
+    ustensilsLink.id = ustensils;
     ustensilsLink.innerText = ustensils;
     ustensilsLink.addEventListener("click",mouvUstensils);
     ustensilsDropdownMenu.appendChild(ustensilsLink);
@@ -104,10 +104,13 @@ function mouvIngredient(event){
   var tagIngredient = document.createElement("div");
   tagIngredient.className="ingredient_tag";
   tagIngredient.innerText = distinctIngredients[indexOfIngredient];
-  //tagIngredient.appendChild(ingredientItem);
+
+  tagIngredient.appendChild(ingredientItem);
+
+  document.body.appendChild(tagIngredient);
 
 
-  document.getElementsByName("reponse-dropdown").appendChild(tagIngredient);
+  //document.getElementsByName("reponse-dropdown").appendChild(tagIngredient);
 // selectionne un element de la liste
 // le deplacer dans la div  reponse-dropdown 
 // et le supprimer de la liste
@@ -120,8 +123,9 @@ function mouvUstensils(e){
   var indexOfUstensils = ustensilsItem.id;
   var tagUstensils = document.createElement("div");
   tagUstensils.className="Ustensils_tag";
-  tagUstensils.text = distinctUstensils[indexOfUstensils];
-  document.getElementsById("reponse-dropdown").appendChild(tagUstensils);
+  tagUstensils.innerText = distinctUstensils[indexOfUstensils];
+
+  
 
 }
 
