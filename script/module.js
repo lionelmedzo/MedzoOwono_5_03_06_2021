@@ -96,7 +96,7 @@ function displayDistinctItemsDropdown3 (distinctAppliance = [], dropdownName3)
   }
   appliancesDropdownMenu.appendChild(appliancesContainer);
 }
-
+const reponse = document.getElementsByName("reponse-dropdown");
 function mouvIngredient(event){
   var ingredientItem = event.target;
   console.log(ingredientItem);
@@ -108,6 +108,8 @@ function mouvIngredient(event){
   tagIngredient.appendChild(ingredientItem);
 
   document.body.appendChild(tagIngredient);
+  //reponse.appendChild(tagIngredient);
+
 
 
   //document.getElementsByName("reponse-dropdown").appendChild(tagIngredient);
@@ -221,6 +223,7 @@ let filteredFriends = users.filter(user => {
 var distinctIngredients = getDistinctIngredients();
 var distinctUstensils = getDistinctUstensils();
 var distinctAppliance = getDistinctAppliances();
+
 
 displayDistinctItemsDropdown(distinctIngredients, "ingredientsDropdownMenu");
 displayDistinctItemsDropdown2(distinctUstensils, "ustensilsDropdownMenu");
