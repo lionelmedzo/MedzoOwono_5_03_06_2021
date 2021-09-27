@@ -232,4 +232,9 @@ ol, ul {
       -ms-flex-align: center;
           align-items: center;
 }
+
+#reponse-dropdown li {
+  display: inline;
+  padding-left: .5em;
+}
 /*# sourceMappingURL=main.css.map */

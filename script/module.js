@@ -52,7 +52,6 @@ function displayDistinctItemsDropdown (distinctIngredients = [], dropdownName)
   {
     var ingredient = distinctIngredients[i];
     const ingredientLink = document.createElement("li");
-    // enlever id
     ingredientLink.id = ingredient;
     ingredientLink.innerText = ingredient;
     ingredientLink.addEventListener("click",mouvIngredient);
@@ -70,7 +69,6 @@ function displayDistinctItemsDropdown2 (distinctUstensils = [], dropdownName2)
   {
     var ustensils = distinctUstensils[i];
     const ustensilsLink = document.createElement("li");
-    // enlever id
     ustensilsLink.id = ustensils;
     ustensilsLink.innerText = ustensils;
     ustensilsLink.addEventListener("click",mouvUstensils);
@@ -89,14 +87,14 @@ function displayDistinctItemsDropdown3 (distinctAppliance = [], dropdownName3)
   {
     var appliances = distinctAppliance[i];
     const appliancesLink = document.createElement("li");
-    // enlever id
-    //applianceLink.id = i;
+    appliancesLink.id = appliances;
     appliancesLink.innerText = appliances;
+    appliancesLink.addEventListener("click", mouvAppliances);
     appliancesDropdownMenu.appendChild(appliancesLink);
+    
   }
   appliancesDropdownMenu.appendChild(appliancesContainer);
 }
-//const reponse = document.getElementById("reponse-dropdown");
 function mouvIngredient(event){
   var ingredientItem = event.target;
   const reponse = document.getElementById("reponse-dropdown");
@@ -105,41 +103,39 @@ function mouvIngredient(event){
   var tagIngredient = document.createElement("div");
   tagIngredient.className="ingredient_tag";
   tagIngredient.setAttribute("data-ingredient-id",indexOfIngredient);
-  
   tagIngredient.innerText = distinctIngredients[indexOfIngredient];
-
-
- reponse.appendChild(ingredientItem);
+  reponse.appendChild(ingredientItem);
  //var tag = event.target;
  //var indexIngredient = tag.getAttribute("data-ingredient-id");
 
-// selectionne un element de la liste
-// le deplacer dans la div  reponse-dropdown 
-// et le supprimer de la liste
 }
 
 
-function mouvUstensils(e){
-  var ustensilsItem = e.target;
+function mouvUstensils(event){
+  var ustensilsItem = event.target;
+  const reponse = document.getElementById("reponse-dropdown");
   console.log(ustensilsItem);
   var indexOfUstensils = ustensilsItem.id;
   var tagUstensils = document.createElement("div");
-  tagUstensils.className="Ustensils_tag";
+  tagUstensils.className="ustensils_tag";
+  tagUstensils.setAttribute("data-ustensils-id",indexOfUstensils);
   tagUstensils.innerText = distinctUstensils[indexOfUstensils];
-
+  reponse.appendChild(ustensilsItem);
   
 
 }
 
 
-function mouvAppliances(e){
-  var appliancesItem = e.target;
+function mouvAppliances(event){
+  var appliancesItem = event.target;
+  const reponse = document.getElementById("reponse-dropdown");
   console.log(appliancesItem);
-  var indexOfappliances = appliancesItem.id;
+  var indexOfAppliances = appliancesItem.id;
   var tagAppliances = document.createElement("div");
-  tagAppliances.className="Appliances_tag";
-  tagAppliances.text = distinctAppliance[indexOfappliances];
-  document.getElementsById("reponse-dropdown").appendChild(tagAppliances);
+  tagAppliances.className="appliances_tag";
+  tagAppliances.setAttribute("data-appliances-id",indexOfAppliances);
+  tagAppliances.innerText = distinctAppliance[indexOfAppliances];
+  reponse.appendChild(appliancesItem);
 
 }
 
