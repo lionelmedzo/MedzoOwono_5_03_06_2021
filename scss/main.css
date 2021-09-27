@@ -233,8 +233,32 @@ ol, ul {
           align-items: center;
 }
 
+#reponse-dropdown {
+  margin: 1em;
+}
+
 #reponse-dropdown li {
-  display: inline;
-  padding-left: .5em;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-left: .5em;
+}
+
+#reponse-dropdown #ingredients {
+  background: #3282F7;
+  margin-bottom: .5em;
+  padding: 1em 3em 1em 1em;
+}
+
+#reponse-dropdown #ustensils {
+  background: #ED6454;
+  margin-bottom: .5em;
+  padding: 1em 3em 1em 1em;
+}
+
+#reponse-dropdown #appliances {
+  background: #68D9A4;
+  margin-bottom: .5em;
+  padding: 1em 3em 1em 1em;
 }
 /*# sourceMappingURL=main.css.map */

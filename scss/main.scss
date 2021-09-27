@@ -232,8 +232,26 @@ ol, ul {
         
     }
 }
-#reponse-dropdown li{
-    display:inline;
-    padding-left: .5em;
-    
+#reponse-dropdown{
+    margin: 1em;
+    li{
+        display: inline-flex;
+        margin-left: .5em;    
+    }
+    #ingredients{
+        background: $rectangle1-color;
+        margin-bottom: .5em;
+        padding: 1em 3em 1em 1em;
+    }
+    #ustensils{
+        background: $rectangle3-color;
+        margin-bottom: .5em;
+        padding: 1em 3em 1em 1em;
+    }
+    #appliances{
+        background: $rectangle2-color;
+        margin-bottom: .5em;
+        padding: 1em 3em 1em 1em;
+
+    }
 }

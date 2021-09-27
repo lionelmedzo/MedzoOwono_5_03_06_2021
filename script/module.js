@@ -52,7 +52,7 @@ function displayDistinctItemsDropdown (distinctIngredients = [], dropdownName)
   {
     var ingredient = distinctIngredients[i];
     const ingredientLink = document.createElement("li");
-    ingredientLink.id = ingredient;
+    ingredientLink.id = "ingredients";
     ingredientLink.innerText = ingredient;
     ingredientLink.addEventListener("click",mouvIngredient);
     ingredientsDropdownMenu.appendChild(ingredientLink);
@@ -69,7 +69,7 @@ function displayDistinctItemsDropdown2 (distinctUstensils = [], dropdownName2)
   {
     var ustensils = distinctUstensils[i];
     const ustensilsLink = document.createElement("li");
-    ustensilsLink.id = ustensils;
+    ustensilsLink.id = "ustensils";
     ustensilsLink.innerText = ustensils;
     ustensilsLink.addEventListener("click",mouvUstensils);
     ustensilsDropdownMenu.appendChild(ustensilsLink);
@@ -87,7 +87,7 @@ function displayDistinctItemsDropdown3 (distinctAppliance = [], dropdownName3)
   {
     var appliances = distinctAppliance[i];
     const appliancesLink = document.createElement("li");
-    appliancesLink.id = appliances;
+    appliancesLink.id = "appliances";
     appliancesLink.innerText = appliances;
     appliancesLink.addEventListener("click", mouvAppliances);
     appliancesDropdownMenu.appendChild(appliancesLink);
@@ -99,10 +99,10 @@ function mouvIngredient(event){
   var ingredientItem = event.target;
   const reponse = document.getElementById("reponse-dropdown");
   console.log(ingredientItem);
-  var indexOfIngredient = ingredientItem.id;
+  var indexOfIngredient = "ingredientItem.id";
   var tagIngredient = document.createElement("div");
   tagIngredient.className="ingredient_tag";
-  tagIngredient.setAttribute("data-ingredient-id",indexOfIngredient);
+  tagIngredient.setAttribute("data-ingredient-id","indexOfIngredient");
   tagIngredient.innerText = distinctIngredients[indexOfIngredient];
   reponse.appendChild(ingredientItem);
  //var tag = event.target;
@@ -181,7 +181,7 @@ const search = document.querySelector(".navbar");
 const input = search.querySelector("input");
 input.onkeyup=(e)=>{
   let userData = e.target.value; 
- if(userData.length > 2)
+ if(userData.length > 2 || reponse) 
   {
     filteredRecipes = recipes.filter(r => !r.name.includes(userData) && 
                                           !r.appliance.includes(userData) &&
