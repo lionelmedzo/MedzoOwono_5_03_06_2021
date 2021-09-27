@@ -96,23 +96,23 @@ function displayDistinctItemsDropdown3 (distinctAppliance = [], dropdownName3)
   }
   appliancesDropdownMenu.appendChild(appliancesContainer);
 }
-const reponse = document.getElementsByName("reponse-dropdown");
+//const reponse = document.getElementById("reponse-dropdown");
 function mouvIngredient(event){
   var ingredientItem = event.target;
+  const reponse = document.getElementById("reponse-dropdown");
   console.log(ingredientItem);
   var indexOfIngredient = ingredientItem.id;
   var tagIngredient = document.createElement("div");
   tagIngredient.className="ingredient_tag";
+  tagIngredient.setAttribute("data-ingredient-id",indexOfIngredient);
+  
   tagIngredient.innerText = distinctIngredients[indexOfIngredient];
 
-  tagIngredient.appendChild(ingredientItem);
 
-  document.body.appendChild(tagIngredient);
-  //reponse.appendChild(tagIngredient);
+ reponse.appendChild(ingredientItem);
+ //var tag = event.target;
+ //var indexIngredient = tag.getAttribute("data-ingredient-id");
 
-
-
-  //document.getElementsByName("reponse-dropdown").appendChild(tagIngredient);
 // selectionne un element de la liste
 // le deplacer dans la div  reponse-dropdown 
 // et le supprimer de la liste
