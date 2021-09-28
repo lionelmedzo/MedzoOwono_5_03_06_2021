@@ -175,6 +175,7 @@ h6{
 li{
     list-style-type: none;
     
+    
 }
 .time{
     text-align: right;
@@ -229,29 +230,47 @@ ol, ul {
   grid-template-columns:repeat(2,150px);
   grid-template-rows: auto;
   align-items: center;
+  
         
+    }
+    li{
+        color: $rectangle-text-color;
+    }
+}
+#appareilsDropdownMenu{
+    li{
+        color: $rectangle-text-color; 
+    }
+}
+#ustensilsDropdownMenu{
+    li{
+        color: $rectangle-text-color;
     }
 }
 #reponse-dropdown{
     margin: 1em;
     li{
         display: inline-flex;
-        margin-left: .5em;    
+        margin-left: .5em;   
+        color: $rectangle-text-color; 
     }
     #ingredients{
         background: $rectangle1-color;
         margin-bottom: .5em;
         padding: 1em 3em 1em 1em;
+        color: $rectangle-text-color;
     }
     #ustensils{
         background: $rectangle3-color;
         margin-bottom: .5em;
         padding: 1em 3em 1em 1em;
+        color: $rectangle-text-color;
     }
     #appliances{
         background: $rectangle2-color;
         margin-bottom: .5em;
         padding: 1em 3em 1em 1em;
+        color: $rectangle-text-color;
 
     }
 }

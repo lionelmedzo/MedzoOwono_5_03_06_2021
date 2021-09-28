@@ -105,8 +105,8 @@ function mouvIngredient(event){
   tagIngredient.setAttribute("data-ingredient-id","indexOfIngredient");
   tagIngredient.innerText = distinctIngredients[indexOfIngredient];
   reponse.appendChild(ingredientItem);
- //var tag = event.target;
- //var indexIngredient = tag.getAttribute("data-ingredient-id");
+  var tag = event.target;
+ var indexIngredient = tag.getAttribute("data-ingredient-id");
 
 }
 
@@ -138,6 +138,7 @@ function mouvAppliances(event){
   reponse.appendChild(appliancesItem);
 
 }
+// fonction supprimer un ingredient, ustensils, appareils choisi
 
 
 function displayAllItems(items)
