@@ -138,18 +138,31 @@ function mouvAppliances(event){
 
 }
 // fonction supprimer un ingredient, ustensils, appareils choisi
+
 function supprimer(){
-  var input = document.getElementById('ingredients');
-  input.parentNode.removeChild(input);
+  var inputIngredient = document.getElementById('ingredients');
+  var ingredient= document.getElementById("ingredientsDropdownMenu");
+
+  var inputUstensils = document.getElementById('ustensils');
+  var ustensils = document.getElementById("ustensilsDropdownMenu");
+  if(inputIngredient.click){
+    inputIngredient.parentNode.removeChild(inputIngredient);
+    ingredient.appendChild(inputIngredient);
+  }
+  if(inputUstensils.click){
+    inputUstensils.parentNode.removeChild(inputUstensils);
+    ustensils.appendChild(inputUstensils);
+  }
+ 
 }
-function supprimer2(){
-  var input = document.getElementById('ustensils');
-  input.parentNode.removeChild(input);
+/*function supprimer2(){
+  var input2 = document.getElementById('ustensils');
+  input2.parentNode.removeChild(input2);
 }
 function supprimer3(){
-  var input = document.getElementById('appliances');
-  input.parentNode.removeChild(input);
-}
+  var input3 = document.getElementById('appliances');
+  input3.parentNode.removeChild(input3);
+}*/
 
 
 
