@@ -105,9 +105,8 @@ function mouvIngredient(event){
   tagIngredient.setAttribute("data-ingredient-id","indexOfIngredient");
   tagIngredient.innerText = distinctIngredients[indexOfIngredient];
   reponse.appendChild(ingredientItem);
-  var tag = event.target;
- var indexIngredient = tag.getAttribute("data-ingredient-id");
-
+  //var tag = event.target;
+ //var indexIngredient = tag.getAttribute("data-ingredient-id");
 }
 
 
@@ -139,6 +138,19 @@ function mouvAppliances(event){
 
 }
 // fonction supprimer un ingredient, ustensils, appareils choisi
+function supprimer(){
+  var input = document.getElementById('ingredients');
+  input.parentNode.removeChild(input);
+}
+function supprimer2(){
+  var input = document.getElementById('ustensils');
+  input.parentNode.removeChild(input);
+}
+function supprimer3(){
+  var input = document.getElementById('appliances');
+  input.parentNode.removeChild(input);
+}
+
 
 
 function displayAllItems(items)
