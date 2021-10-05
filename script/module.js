@@ -139,15 +139,16 @@ function mouvAppliances(event){
 }
 // fonction supprimer un ingredient, ustensils, appareils choisi
 
-function supprimer(){
+function supprimer(){ // onclick sur le HTML
   var inputIngredient = document.getElementById('ingredients');
   var ingredient= document.getElementById("ingredientsDropdownMenu");
 
   var inputUstensils = document.getElementById('ustensils');
   var ustensils = document.getElementById("ustensilsDropdownMenu");
-  if(inputIngredient.click){
-    inputIngredient.parentNode.removeChild(inputIngredient);
-    ingredient.appendChild(inputIngredient);
+  
+  if(inputIngredient.click){ // si on click sur l'element
+    inputIngredient.parentNode.removeChild(inputIngredient); // effacement de l'element
+    ingredient.appendChild(inputIngredient);// element replacer dans la liste des ingredeients
   }
   if(inputUstensils.click){
     inputUstensils.parentNode.removeChild(inputUstensils);
@@ -155,14 +156,6 @@ function supprimer(){
   }
  
 }
-/*function supprimer2(){
-  var input2 = document.getElementById('ustensils');
-  input2.parentNode.removeChild(input2);
-}
-function supprimer3(){
-  var input3 = document.getElementById('appliances');
-  input3.parentNode.removeChild(input3);
-}*/
 
 
 
