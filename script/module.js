@@ -138,7 +138,13 @@ function mouvAppliances(event){
 
 }
 // fonction supprimer un ingredient, ustensils, appareils choisi
-
+/*document.getElementById("ingredientsDropdownMenu").addEventListener("click",function(){
+  var inputIngredient = document.getElementById('ingredients');
+  var ingredient= document.getElementById("ingredientsDropdownMenu");
+  inputIngredient.parentNode.removeChild(inputIngredient); // effacement de l'element
+  ingredient.appendChild(inputIngredient);
+  alert("ingredient click");
+});*/
 function supprimer(){ // onclick sur le HTML
   var inputIngredient = document.getElementById('ingredients');
   var ingredient= document.getElementById("ingredientsDropdownMenu");
@@ -149,10 +155,12 @@ function supprimer(){ // onclick sur le HTML
   if(inputIngredient.click){ // si on click sur l'element
     inputIngredient.parentNode.removeChild(inputIngredient); // effacement de l'element
     ingredient.appendChild(inputIngredient);// element replacer dans la liste des ingredeients
+    alert("ingredient click");
   }
   if(inputUstensils.click){
     inputUstensils.parentNode.removeChild(inputUstensils);
     ustensils.appendChild(inputUstensils);
+    alert("ustensils click");
   }
  
 }
