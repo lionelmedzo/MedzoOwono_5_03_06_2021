@@ -249,6 +249,9 @@ ol, ul {
 }
 #reponse-dropdown{
     margin: 1em;
+    ul{
+        display:inline;
+    }
     li{
         display: inline-flex;
         margin-left: .5em;   

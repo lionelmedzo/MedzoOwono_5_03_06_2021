@@ -99,14 +99,13 @@ function mouvIngredient(event){
   var ingredientItem = event.target;
   const reponse = document.getElementById("reponse-dropdown");
   console.log(ingredientItem);
-  var indexOfIngredient = "ingredientItem.id";
-  var tagIngredient = document.createElement("div");
-  tagIngredient.className="ingredient_tag";
-  tagIngredient.setAttribute("data-ingredient-id","indexOfIngredient");
-  tagIngredient.innerText = distinctIngredients[indexOfIngredient];
-  reponse.appendChild(ingredientItem);
-  //var tag = event.target;
- //var indexIngredient = tag.getAttribute("data-ingredient-id");
+  var tagIngredient = document.createElement("ul");
+  var ingredientTag = ingredientItem;
+  ingredientTag.setAttribute("data-ingredient-id", 2);
+  ingredientTag.addEventListener("click", removeIngredient);
+  tagIngredient.appendChild(ingredientTag);
+  reponse.appendChild(tagIngredient);
+
 }
 
 
@@ -114,56 +113,47 @@ function mouvUstensils(event){
   var ustensilsItem = event.target;
   const reponse = document.getElementById("reponse-dropdown");
   console.log(ustensilsItem);
-  var indexOfUstensils = ustensilsItem.id;
-  var tagUstensils = document.createElement("div");
-  tagUstensils.className="ustensils_tag";
-  tagUstensils.setAttribute("data-ustensils-id",indexOfUstensils);
-  tagUstensils.innerText = distinctUstensils[indexOfUstensils];
-  reponse.appendChild(ustensilsItem);
-  
-
+  var tagUstensils = document.createElement("ul");
+  var ustensilTag = ustensilsItem;
+  ustensilTag.setAttribute("data-ustensil-id", 2);
+  ustensilTag.addEventListener("click", removeUstensil);
+  tagUstensils.appendChild(ustensilTag);
+  reponse.appendChild(tagUstensils);
 }
-
 
 function mouvAppliances(event){
   var appliancesItem = event.target;
   const reponse = document.getElementById("reponse-dropdown");
   console.log(appliancesItem);
-  var indexOfAppliances = appliancesItem.id;
-  var tagAppliances = document.createElement("div");
-  tagAppliances.className="appliances_tag";
-  tagAppliances.setAttribute("data-appliances-id",indexOfAppliances);
-  tagAppliances.innerText = distinctAppliance[indexOfAppliances];
-  reponse.appendChild(appliancesItem);
+  var tagAppliances = document.createElement("ul");
+  var applianceTag = appliancesItem;
+  applianceTag.setAttribute("data-appliance-id", 2);
+  applianceTag.addEventListener("click", removeAppliance);
+  tagAppliances.appendChild(applianceTag);
+  reponse.appendChild(tagAppliances);
 
 }
-// fonction supprimer un ingredient, ustensils, appareils choisi
-/*document.getElementById("ingredientsDropdownMenu").addEventListener("click",function(){
+
+function removeIngredient(){
   var inputIngredient = document.getElementById('ingredients');
   var ingredient= document.getElementById("ingredientsDropdownMenu");
   inputIngredient.parentNode.removeChild(inputIngredient); // effacement de l'element
   ingredient.appendChild(inputIngredient);
-  alert("ingredient click");
-});*/
-function supprimer(){ // onclick sur le HTML
-  var inputIngredient = document.getElementById('ingredients');
-  var ingredient= document.getElementById("ingredientsDropdownMenu");
-
+}
+function removeUstensil(){
   var inputUstensils = document.getElementById('ustensils');
   var ustensils = document.getElementById("ustensilsDropdownMenu");
-  
-  if(inputIngredient.click){ // si on click sur l'element
-    inputIngredient.parentNode.removeChild(inputIngredient); // effacement de l'element
-    ingredient.appendChild(inputIngredient);// element replacer dans la liste des ingredeients
-    alert("ingredient click");
-  }
-  if(inputUstensils.click){
-    inputUstensils.parentNode.removeChild(inputUstensils);
-    ustensils.appendChild(inputUstensils);
-    alert("ustensils click");
-  }
- 
+  inputUstensils.parentNode.removeChild(inputUstensils);
+  ustensils.appendChild(inputUstensils);
 }
+
+function removeAppliance(){
+  var inputAppliances = document.getElementById('appliances');
+  var appliances = document.getElementById("appliancesDropdownMenu");
+  inputAppliances.parentNode.removeChild(inputAppliances);
+  appliances.appendChild(appliances);
+}
+
 
 
 

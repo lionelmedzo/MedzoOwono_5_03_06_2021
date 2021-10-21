@@ -249,6 +249,10 @@ ol, ul {
   margin: 1em;
 }
 
+#reponse-dropdown ul {
+  display: inline;
+}
+
 #reponse-dropdown li {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
