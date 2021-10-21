@@ -230,6 +230,41 @@ let filteredFriends = users.filter(user => {
       })
   }
 }
+/*var reponse = document.getElementById("reponse-dropdown");
+let filtreReponse = recipes.filter(function(element){
+	for(let i =0; i < element.ingredient.length; i++){
+		if (element.ingredient[i] == reponse){
+			return element;
+
+    }
+  }
+  
+});*/
+
+let recipes2 = [
+  {
+    'title': 'Jus d\'orange',
+    'ingredients': ['orange']
+  },
+  {
+    'title': 'Tarte aux agrumes',
+    'ingredients': ['farine', 'beurre', 'sucre', 'oeuf', 'citron', 'orange', 'clémentine']
+  },
+  {
+    'title': 'Citronnade',
+    'ingredients': ['eau', 'citron']
+  }
+];
+
+let match = recipes2.filter(function(element) {
+  for (let i = 0; i < element.ingredients.length; i++) {
+    if (element.ingredients[i] === 'orange') {
+      return element;
+    }
+  }
+});
+
+console.table(match);
 
 
 
