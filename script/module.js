@@ -134,21 +134,22 @@ function mouvAppliances(event){
 
 }
 
-function removeIngredient(){
-  var inputIngredient = document.getElementById('ingredients');
+function removeIngredient(event){
+  var inputIngredient = event.target;
   var ingredient= document.getElementById("ingredientsDropdownMenu");
   inputIngredient.parentNode.removeChild(inputIngredient); // effacement de l'element
   ingredient.appendChild(inputIngredient);
 }
-function removeUstensil(){
-  var inputUstensils = document.getElementById('ustensils');
+
+function removeUstensil(event){
+  var inputUstensils = event.target;
   var ustensils = document.getElementById("ustensilsDropdownMenu");
   inputUstensils.parentNode.removeChild(inputUstensils);
   ustensils.appendChild(inputUstensils);
 }
 
-function removeAppliance(){
-  var inputAppliances = document.getElementById('appliances');
+function removeAppliance(event){
+  var inputAppliances = event.target;
   var appliances = document.getElementById("appliancesDropdownMenu");
   inputAppliances.parentNode.removeChild(inputAppliances);
   appliances.appendChild(appliances);
@@ -230,18 +231,19 @@ let filteredFriends = users.filter(user => {
       })
   }
 }
-/*var reponse = document.getElementById("reponse-dropdown");
-let filtreReponse = recipes.filter(function(element){
-	for(let i =0; i < element.ingredient.length; i++){
-		if (element.ingredient[i] == reponse){
-			return element;
 
-    }
-  }
-  
-});*/
+  /*const reponse = document.getElementById("reponse-dropdown");
+  let selectionner =[];
+  selectionner = reponse.push(selectionner);
+  console.log(selectionner);*/ 
 
-let recipes2 = [
+/*let selectionner =[];
+let test =["un", "deux", "trois"];
+
+const resultat = Array.prototype.push.apply(selectionner,test);
+console.log(resultat);*/
+
+/*let recipes2 = [
   {
     'title': 'Jus d\'orange',
     'ingredients': ['orange']
@@ -264,7 +266,7 @@ let match = recipes2.filter(function(element) {
   }
 });
 
-console.table(match);
+console.table(match);*/
 
 
 
