@@ -232,44 +232,16 @@ let filteredFriends = users.filter(user => {
   }
 }
 
-  /*const reponse = document.getElementById("reponse-dropdown");
-  let selectionner =[];
-  selectionner = reponse.push(selectionner);
-  console.log(selectionner);*/ 
+const recherche = document.getElementById("reponse-dropdown");
+recherche.addEventListener("change", function(){                 // Mettre autre chose que le click
+  const input= recherche.value;
+  console.log("test1 "+ input);
 
-/*let selectionner =[];
-let test =["un", "deux", "trois"];
-
-const resultat = Array.prototype.push.apply(selectionner,test);
-console.log(resultat);*/
-
-/*let recipes2 = [
-  {
-    'title': 'Jus d\'orange',
-    'ingredients': ['orange']
-  },
-  {
-    'title': 'Tarte aux agrumes',
-    'ingredients': ['farine', 'beurre', 'sucre', 'oeuf', 'citron', 'orange', 'clémentine']
-  },
-  {
-    'title': 'Citronnade',
-    'ingredients': ['eau', 'citron']
-  }
-];
-
-let match = recipes2.filter(function(element) {
-  for (let i = 0; i < element.ingredients.length; i++) {
-    if (element.ingredients[i] === 'orange') {
-      return element;
-    }
-  }
+  const result = recipes.filter(item => item.ingredients.includes(input));
+  console.log("test2" + result);
 });
 
-console.table(match);*/
-
-
-
+ 
 var distinctIngredients = getDistinctIngredients();
 var distinctUstensils = getDistinctUstensils();
 var distinctAppliance = getDistinctAppliances();
