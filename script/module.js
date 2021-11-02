@@ -199,7 +199,7 @@ const search = document.querySelector(".navbar");
 const input = search.querySelector("input");
 input.onkeyup=(e)=>{
   let userData = e.target.value; 
- if(userData.length > 2 || reponse) 
+ if(userData.length > 2) 
   {
     filteredRecipes = recipes.filter(r => !r.name.includes(userData) && 
                                           !r.appliance.includes(userData) &&
@@ -232,13 +232,20 @@ let filteredFriends = users.filter(user => {
   }
 }
 
-const recherche = document.getElementById("reponse-dropdown");
+/*const recherche = document.getElementById("reponse-dropdown");
 recherche.addEventListener("change", function(){                 // Mettre autre chose que le click
   const input= recherche.value;
   console.log("test1 "+ input);
 
-  const result = recipes.filter(item => item.ingredients.includes(input));
+  const result = recipes.filter(item => item.ingredients.includes(input)); //pour cahque itération, SI le nom includ
   console.log("test2" + result);
+  displayAllItems();
+});*/
+const liIngredients =document.getElementById("ingredients");
+liIngredients.addEventListener("click",function(){
+  const input= liIngredients.value;
+  console.log("test1"+ input);
+
 });
 
  
