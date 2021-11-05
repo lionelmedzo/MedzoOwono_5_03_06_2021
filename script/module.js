@@ -119,6 +119,8 @@ function mouvUstensils(event){
   ustensilTag.addEventListener("click", removeUstensil);
   tagUstensils.appendChild(ustensilTag);
   reponse.appendChild(tagUstensils);
+  console.log("Inner text : " + ingredientItem.innerText);
+  searchingText += "" + ingredientItem.innerText;
 }
 
 function mouvAppliances(event){
@@ -199,54 +201,58 @@ const search = document.querySelector(".navbar");
 const input = search.querySelector("input");
 input.onkeyup=(e)=>{
   let userData = e.target.value; 
- if(userData.length > 2) 
-  {
-    filteredRecipes = recipes.filter(r => !r.name.includes(userData) && 
-                                          !r.appliance.includes(userData) &&
-                                          r.ustensils.filter(u => u.includes(userData)).length == 0 &&
-                                          r.ingredients.filter(i => i.ingredient.includes(userData)).length == 0);
-
-/*let i;
-const filteredFriends = [];
-
-for (i = 0; i < users.length; i += 1) {
-  if (this.isUserExist(users[i]) {
-    filteredFriends.push(users[i]);
-  }
+  searchRecipes(userData)
 }
-let filteredFriends = users.filter(user => {
-    return this.isUserExist(user);
-});*/
+function searchRecipes(text){
+  if(searchingText.length > 2)
+  {
+    if (searchingText !=text){
 
-    filteredRecipes.map(r =>
+    }else{
+      searchingText = text;
+    }
+    if (showRecipes != recipes){
+      filteredRecipes = showRecipes.filter(r => !r.name.includes(text) && 
+                        !r.appliance.includes(text) &&
+                        r.ustensils.filter(u => u.includes(text)).length == 0 &&
+                        r.ingredients.filter(i => i.ingredient.includes(text)).length == 0);
+
+
+
+      filteredRecipes.map(r =>
       {
         document.getElementById(r.id).style.display = "none"
       })
+      showRecipes =filteredRecipes;
+    }else{
+      filteredRecipes = recipes.filter(r => !r.name.includes(text) && 
+                        !r.appliance.includes(text) &&
+                        r.ustensils.filter(u => u.includes(text)).length == 0 &&
+                        r.ingredients.filter(i => i.ingredient.includes(text)).length == 0);
+      filteredRecipes.map(r =>
+      {
+        document.getElementById(r.id).style.display = "none"
+      })
+      showRecipes =filteredRecipes;
+    }
   }
-  else
-  {
+  else{
     recipes.map(r =>
       {
         document.getElementById(r.id).style.display = "block"
       })
-  }
+  } 
 }
 
-/*const recherche = document.getElementById("reponse-dropdown");
-recherche.addEventListener("change", function(){                 // Mettre autre chose que le click
-  const input= recherche.value;
-  console.log("test1 "+ input);
 
-  const result = recipes.filter(item => item.ingredients.includes(input)); //pour cahque itération, SI le nom includ
-  console.log("test2" + result);
-  displayAllItems();
-});*/
-const liIngredients =document.getElementById("ingredients");
+/*const liIngredients =document.getElementById("ingredients");
 liIngredients.addEventListener("click",function(){
   const input= liIngredients.value;
   console.log("test1"+ input);
 
-});
+});*/
+//var tableIngredientTag=[];
+
 
  
 var distinctIngredients = getDistinctIngredients();
