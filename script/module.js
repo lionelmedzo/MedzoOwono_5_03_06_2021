@@ -105,6 +105,8 @@ function mouvIngredient(event){
   ingredientTag.addEventListener("click", removeIngredient);
   tagIngredient.appendChild(ingredientTag);
   reponse.appendChild(tagIngredient);
+  console.log("Inner text : " + ingredientItem.innerText);
+  searchingText += " " + ingredientItem.innerText;
 
 }
 
@@ -119,8 +121,7 @@ function mouvUstensils(event){
   ustensilTag.addEventListener("click", removeUstensil);
   tagUstensils.appendChild(ustensilTag);
   reponse.appendChild(tagUstensils);
-  console.log("Inner text : " + ingredientItem.innerText);
-  searchingText += "" + ingredientItem.innerText;
+  
 }
 
 function mouvAppliances(event){
@@ -203,19 +204,19 @@ input.onkeyup=(e)=>{
   let userData = e.target.value; 
   searchRecipes(userData)
 }
-function searchRecipes(text){
+function searchRecipes(searchingText){
   if(searchingText.length > 2)
   {
-    if (searchingText !=text){
+    //if (searchingText !=text){
 
-    }else{
-      searchingText = text;
-    }
+    //}else{
+     // searchingText = text;
+    //}
     if (showRecipes != recipes){
-      filteredRecipes = showRecipes.filter(r => !r.name.includes(text) && 
-                        !r.appliance.includes(text) &&
-                        r.ustensils.filter(u => u.includes(text)).length == 0 &&
-                        r.ingredients.filter(i => i.ingredient.includes(text)).length == 0);
+      filteredRecipes = showRecipes.filter(r => !r.name.includes(searchingText) && 
+                        !r.appliance.includes(searchingText) &&
+                        r.ustensils.filter(u => u.includes(searchingText)).length == 0 &&
+                        r.ingredients.filter(i => i.ingredient.includes(searchingText)).length == 0);
 
 
 
@@ -225,10 +226,10 @@ function searchRecipes(text){
       })
       showRecipes =filteredRecipes;
     }else{
-      filteredRecipes = recipes.filter(r => !r.name.includes(text) && 
-                        !r.appliance.includes(text) &&
-                        r.ustensils.filter(u => u.includes(text)).length == 0 &&
-                        r.ingredients.filter(i => i.ingredient.includes(text)).length == 0);
+      filteredRecipes = recipes.filter(r => !r.name.includes(searchingText) && 
+                        !r.appliance.includes(searchingText) &&
+                        r.ustensils.filter(u => u.includes(searchingText)).length == 0 &&
+                        r.ingredients.filter(i => i.ingredient.includes(searchingText)).length == 0);
       filteredRecipes.map(r =>
       {
         document.getElementById(r.id).style.display = "none"
