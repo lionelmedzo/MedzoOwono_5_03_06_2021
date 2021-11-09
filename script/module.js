@@ -106,7 +106,7 @@ function mouvIngredient(event){
   tagIngredient.appendChild(ingredientTag);
   reponse.appendChild(tagIngredient);
   console.log("Inner text : " + ingredientItem.innerText);
-  searchingText += " " + ingredientItem.innerText;
+  searchingText += "," + ingredientItem.innerText;
 
 }
 
@@ -201,8 +201,8 @@ function displayAllItems(items)
 const search = document.querySelector(".navbar");
 const input = search.querySelector("input");
 input.onkeyup=(e)=>{
-  let userData = e.target.value; 
-  searchRecipes(userData)
+  let showRecipes = e.target.value; 
+  searchRecipes(showRecipes);
 }
 function searchRecipes(searchingText){
   if(searchingText.length > 2)
@@ -210,7 +210,7 @@ function searchRecipes(searchingText){
     //if (searchingText !=text){
 
     //}else{
-     // searchingText = text;
+     searchingText = text;
     //}
     if (showRecipes != recipes){
       filteredRecipes = showRecipes.filter(r => !r.name.includes(searchingText) && 
