@@ -97,6 +97,7 @@ function displayDistinctItemsDropdown3 (distinctAppliance = [], dropdownName3)
 }
 function mouvIngredient(event){
   var ingredientItem = event.target;
+  var searchingText;
   const reponse = document.getElementById("reponse-dropdown");
   console.log(ingredientItem);
   var tagIngredient = document.createElement("ul");
@@ -106,7 +107,7 @@ function mouvIngredient(event){
   tagIngredient.appendChild(ingredientTag);
   reponse.appendChild(tagIngredient);
   console.log("Inner text : " + ingredientItem.innerText);
-  searchingText += "," + ingredientItem.innerText;
+  searchingText += " " + ingredientItem.innerText;
 
 }
 
@@ -201,8 +202,8 @@ function displayAllItems(items)
 const search = document.querySelector(".navbar");
 const input = search.querySelector("input");
 input.onkeyup=(e)=>{
-  let showRecipes = e.target.value; 
-  searchRecipes(showRecipes);
+  let userData = e.target.value; 
+  searchRecipes(userData);
 }
 function searchRecipes(searchingText){
   if(searchingText.length > 2)
@@ -210,9 +211,9 @@ function searchRecipes(searchingText){
     //if (searchingText !=text){
 
     //}else{
-     searchingText = text;
+     //searchingText = text;
     //}
-    if (showRecipes != recipes){
+    if (showRecipes = recipes){ // j'ai enlever la difference
       filteredRecipes = showRecipes.filter(r => !r.name.includes(searchingText) && 
                         !r.appliance.includes(searchingText) &&
                         r.ustensils.filter(u => u.includes(searchingText)).length == 0 &&
