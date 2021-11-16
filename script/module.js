@@ -108,6 +108,8 @@ function mouvIngredient(event){
   reponse.appendChild(tagIngredient);
   console.log("Inner text : " + ingredientItem.innerText);
   searchingText += " " + ingredientItem.innerText;
+  //var coupe = reponse.split("/");
+  //console.log(coupe);
 
 }
 
@@ -208,11 +210,6 @@ input.onkeyup=(e)=>{
 function searchRecipes(searchingText){
   if(searchingText.length > 2)
   {
-    //if (searchingText !=text){
-
-    //}else{
-     //searchingText = text;
-    //}
     if (showRecipes = recipes){ // j'ai enlever la difference
       filteredRecipes = showRecipes.filter(r => !r.name.includes(searchingText) && 
                         !r.appliance.includes(searchingText) &&
@@ -243,8 +240,25 @@ function searchRecipes(searchingText){
       {
         document.getElementById(r.id).style.display = "block"
       })
-  } 
+  }
+  
 }
+//function searchingIngredient(){
+// split un texte par espace 
+//chercher l'index par index ( for each)
+//console.log("ceci est un test"+getDistinctIngredients());
+//console.log("test");
+
+//}
+const test ="Bonjour ceci est un Bonjour test";
+const testSplit = test.split(' ');
+console.log("TEST :"+ testSplit)
+console.log(testSplit[1]);
+/*for (var i = 0; i<testSplit.length ; i++){
+  for (var j = 0; j<testSplit.length ; j++){
+    j=i+1;
+  }
+}*/
 
 
 /*const liIngredients =document.getElementById("ingredients");
