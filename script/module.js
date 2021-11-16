@@ -250,15 +250,20 @@ function searchRecipes(searchingText){
 //console.log("test");
 
 //}
-const test ="Bonjour ceci est un Bonjour test";
+const test ="Lait de coco";
 const testSplit = test.split(' ');
+var stock=[];
 console.log("TEST :"+ testSplit)
-console.log(testSplit[1]);
-/*for (var i = 0; i<testSplit.length ; i++){
-  for (var j = 0; j<testSplit.length ; j++){
+console.log(testSplit[0]);
+for (var i = 0; i<testSplit.length-1 ; i++){ // compteur
+  stock=testSplit[i+1];
+  console.log(stock);
+  
+  /*for (var j = 0; j<testSplit.length ; j++){
     j=i+1;
-  }
-}*/
+  }*/
+}
+
 
 
 /*const liIngredients =document.getElementById("ingredients");
